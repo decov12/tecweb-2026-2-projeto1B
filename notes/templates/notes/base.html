@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <title>Get-it</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'notes/getit.css' %}" />
+  </head>
+
+  <body>
+    {% block content %} {% endblock %}
+
+    <script src="{% static 'notes/getit.js' %}"></script>
+  </body>
+</html>
