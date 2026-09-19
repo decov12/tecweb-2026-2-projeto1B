@@ -44,6 +44,11 @@ body {
 .appbar .subtitle {
   font-size: 18px;
   color: #2c2c2c;
+  flex: 1;
+}
+
+.appbar .tags-link {
+  margin-left: auto;
 }
 
 /* ===== Container e formulário ===== */
@@ -79,6 +84,16 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   resize: none;
+}
+
+.form-card-tag {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #4c4c4c;
+  padding: 4px 0;
 }
 
 .btn {
@@ -186,3 +201,32 @@ body {
 .card-rotation-9  { transform: rotate(6deg); }
 .card-rotation-10 { transform: rotate(8deg); }
 .card-rotation-11 { transform: rotate(10deg); }
+
+/* ===== Tags ===== */
+.tag-chip {
+  align-self: flex-start;
+  background-color: rgba(44, 44, 44, 0.08);
+  color: #4c4c4c;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.tag-chip:hover {
+  background-color: rgba(44, 44, 44, 0.16);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 700px;
+}
+
+.tag-chip-lg {
+  font-size: 16px;
+  padding: 10px 18px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

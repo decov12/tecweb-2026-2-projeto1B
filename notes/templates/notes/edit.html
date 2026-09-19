@@ -5,6 +5,7 @@
 <div class="appbar">
   <img class="logo" src="{% static 'notes/img/logo-getit.png' %}" />
   <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+  <a class="btn tags-link" href="{% url 'tags' %}">Tags</a>
 </div>
 
 <div class="container">
@@ -20,6 +21,15 @@
     />
     <label for="detalhes">Detalhes</label>
     <textarea class="autoresize" id="detalhes" name="detalhes">{{ note.content }}</textarea>
+    <label for="tag">Tag (opcional)</label>
+    <input
+      class="form-card-tag"
+      id="tag"
+      type="text"
+      name="tag"
+      placeholder="ex: trabalho"
+      value="{{ note.tag.name }}"
+    />
     <input class="btn" type="submit" value="Salvar" />
     <a class="btn" href="{% url 'index' %}">Cancelar</a>
   </form>

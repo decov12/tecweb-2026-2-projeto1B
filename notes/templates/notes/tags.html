@@ -1,0 +1,20 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="appbar">
+  <img class="logo" src="{% static 'notes/img/logo-getit.png' %}" />
+  <span class="subtitle">Tags</span>
+  <a class="btn tags-link" href="{% url 'index' %}">Voltar</a>
+</div>
+
+<div class="container">
+  <div class="tag-list">
+    {% for tag in tags %}
+    <a class="tag-chip tag-chip-lg" href="{% url 'tag_detail' tag.id %}">#{{ tag.name }}</a>
+    {% empty %}
+    <p>Nenhuma tag criada ainda.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

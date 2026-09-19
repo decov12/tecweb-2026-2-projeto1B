@@ -5,15 +5,24 @@
 <div class="appbar">
   <img class="logo" src="{% static 'notes/img/logo-getit.png' %}" />
   <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+  <a class="btn tags-link" href="{% url 'tags' %}">Tags</a>
 </div>
 
 <div class="container">
   <form class="form-card" method="post">
     {% csrf_token %}
     <label for="titulo">Título</label>
-    <input class="form-card-title" id="titulo" type="text" name="titulo" />
+    <input
+      class="form-card-title"
+      id="titulo"
+      type="text"
+      name="titulo"
+      value="{{ note.title }}"
+    />
     <label for="detalhes">Detalhes</label>
     <textarea class="autoresize" id="detalhes" name="detalhes"></textarea>
+    <label for="tag">Tag (opcional)</label>
+    <input class="form-card-tag" id="tag" type="text" name="tag" placeholder="ex: trabalho" />
     <input class="btn" type="submit" value="Adicionar" />
   </form>
 
@@ -24,6 +33,9 @@
       <div class="card-content">
         <p>{{ note.content }}</p>
       </div>
+      {% if note.tag %}
+      <a class="tag-chip" href="{% url 'tag_detail' note.tag.id %}">#{{ note.tag.name }}</a>
+      {% endif %}
       <div class="card-actions">
         <a class="btn" href="{% url 'edit' note.id %}">Editar</a>
         <a class="btn" href="{% url 'delete' note.id %}">Excluir</a>

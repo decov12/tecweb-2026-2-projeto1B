@@ -1,0 +1,29 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="appbar">
+  <img class="logo" src="{% static 'notes/img/logo-getit.png' %}" />
+  <span class="subtitle">#{{ tag.name }}</span>
+  <a class="btn tags-link" href="{% url 'tags' %}">Todas as tags</a>
+</div>
+
+<div class="container">
+  <div class="card-container">
+    {% for note in notes %}
+    <div class="card">
+      <p class="card-title">{{ note.title }}</p>
+      <div class="card-content">
+        <p>{{ note.content }}</p>
+      </div>
+      <div class="card-actions">
+        <a class="btn" href="{% url 'edit' note.id %}">Editar</a>
+        <a class="btn" href="{% url 'delete' note.id %}">Excluir</a>
+      </div>
+    </div>
+    {% empty %}
+    <p>Nenhuma nota com essa tag ainda.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
