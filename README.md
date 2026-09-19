@@ -5,8 +5,8 @@ Reimplementação do Get-it (Projeto 1) em Django, com banco de dados PostgreSQL
 
 ## Link da aplicação em produção
 
-<!-- TODO: depois do deploy no Render, cole aqui a URL pública, ex: https://getit-appname.onrender.com -->
-
+   https://tecweb-2026-2-projeto1b-kuzm.onrender.com
+   
 ## Funcionalidades
 
 - CRUD de notas (criar, listar, editar, excluir)
