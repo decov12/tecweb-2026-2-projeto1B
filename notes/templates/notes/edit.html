@@ -21,14 +21,14 @@
     />
     <label for="detalhes">Detalhes</label>
     <textarea class="autoresize" id="detalhes" name="detalhes">{{ note.content }}</textarea>
-    <label for="tag">Tag (opcional)</label>
+    <label for="tags">Tags (opcional, separadas por vírgula)</label>
     <input
       class="form-card-tag"
-      id="tag"
+      id="tags"
       type="text"
-      name="tag"
-      placeholder="ex: trabalho"
-      value="{{ note.tag.name }}"
+      name="tags"
+      placeholder="ex: trabalho, urgente"
+      value="{{ tags_atuais }}"
     />
     <input class="btn" type="submit" value="Salvar" />
     <a class="btn" href="{% url 'index' %}">Cancelar</a>

@@ -21,8 +21,8 @@
     />
     <label for="detalhes">Detalhes</label>
     <textarea class="autoresize" id="detalhes" name="detalhes"></textarea>
-    <label for="tag">Tag (opcional)</label>
-    <input class="form-card-tag" id="tag" type="text" name="tag" placeholder="ex: trabalho" />
+    <label for="tags">Tags (opcional, separadas por vírgula)</label>
+    <input class="form-card-tag" id="tags" type="text" name="tags" placeholder="ex: trabalho, urgente" />
     <input class="btn" type="submit" value="Adicionar" />
   </form>
 
@@ -33,8 +33,12 @@
       <div class="card-content">
         <p>{{ note.content }}</p>
       </div>
-      {% if note.tag %}
-      <a class="tag-chip" href="{% url 'tag_detail' note.tag.id %}">#{{ note.tag.name }}</a>
+      {% if note.tags.all %}
+      <div class="tag-row">
+        {% for tag in note.tags.all %}
+        <a class="tag-chip" href="{% url 'tag_detail' tag.id %}">#{{ tag.name }}</a>
+        {% endfor %}
+      </div>
       {% endif %}
       <div class="card-actions">
         <a class="btn" href="{% url 'edit' note.id %}">Editar</a>

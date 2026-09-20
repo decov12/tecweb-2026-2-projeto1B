@@ -1,0 +1,22 @@
+# Generated manually: evolui a relação de tags de many-to-one para many-to-many
+
+from django.db import migrations, models
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ("notes", "0003_tag_note_tag"),
+    ]
+
+    operations = [
+        migrations.RemoveField(
+            model_name="note",
+            name="tag",
+        ),
+        migrations.AddField(
+            model_name="note",
+            name="tags",
+            field=models.ManyToManyField(blank=True, related_name="notes", to="notes.tag"),
+        ),
+    ]

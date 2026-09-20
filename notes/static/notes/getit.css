@@ -217,6 +217,12 @@ body {
   background-color: rgba(44, 44, 44, 0.16);
 }
 
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
